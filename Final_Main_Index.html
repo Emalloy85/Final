@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="Final_Main_Index.css">
+  <link href='https://fonts.googleapis.com/css?family=Rye' rel='stylesheet'>
+  <title>MyMoney</title>
+</head>
+<body>
+
+<!--Welcome paragraph-->
+<header>
+<h1 class="center">Welcome to MyMoney!</h1>
+<br>
+</header>
+
+<!--User Image-->
+<div class="pics">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3r4Exct7wXE51R27MBhOOEGKwM6wB2Hlb-A&s" alt="profile picture" width="500px">
+<div class ="description">Profile Picture</div>
+</div>
+
+<!--Yahoo Finance Image and website link-->
+<div class="pics">
+  <img src="https://s.yimg.com/os/creatr-uploaded-images/2019-09/bb46cfa0-da36-11e9-badf-d3d46810a29b" alt="yahoo finance" width="710px">
+<div class ="description"><a href="https://finance.yahoo.com/">Yahoo Finance</a></div>
+</div>
+
+<!--New York Stock Exchange Image and website link-->
+<div class="pics">
+  <img src="https://cdn.britannica.com/53/68353-050-83DDD422/Trading-floor-New-York-Stock-Exchange-City.jpg" alt="nyse" width="750px">
+<div class ="description"><a href="https://www.nyse.com/index">NYSE</a></div>
+</div>
+
+
+<!--User information and website links-->
+<p id="userName">Todd Hope</p>
+<p id="memberLength">Member since: 2009</p>
+<p id="accountStatus">Your Links: </p>
+<a href = "https://www.chase.com">Chase</a><br><a href = "https://www.fidelity.com/">Fidelity</a>
+
+<!--User Account Information--> 
+<h3 id="accounts">Your Account</h3> 
+
+<!--User bank account table and information-->
+<div class="tables">
+  <table id="bankInfo" border="1" cellpadding="10">
+    <thead>
+      <tr>
+        <tr><th colspan="3">Bank Accounts</th></tr>
+        <th>Bank</th>
+        <th>Description</th>
+        <th>Amount</th>
+      </tr>
+    </thead> 
+    <tbody id="bankTable"></tbody>
+  </table>
+  
+<!--User budget table-->
+<table id="budgetInfo" border="1" cellpadding="10">
+  <thead>
+    <tr>
+      <tr><th colspan="3">Budget</th></tr>
+      <th>Date</th>
+      <th>Description</th>
+      <th>Amount</th>
+    </tr>
+  </thead>  
+  <tbody id="budgetTable"></tbody>
+</table>
+
+<!--User bank account table and information-->
+<table id="stockInfo" border="1" cellpadding="10">
+  <thead>
+    <tr>
+      <tr><th colspan="4">Stocks</th></tr>
+      <th>Stock ID</th>
+      <th>Company</th>
+      <th>Amount</th>
+      <th>Price</th>
+    </tr>
+  </thead>  
+  <tbody id="stockTable"></tbody>
+</table>
+</div>
+
+
+<script>
+  //User budget information for budget table
+  let budgetData = [
+    {Date: `11/23/23`, Description:  `Gas Bill`, Amount: 48.56},
+    {Date: `12/10/23`, Description:  `Water Bill`, Amount: 75.12},
+    {Date: `12/18/23`, Description:  `Fuel`, Amount: 105.24},
+    {Date: `12/23/23`, Description:  `Electric Bill`, Amount: 148.76},
+    {Date: `01/02/24`, Description:  `Mortgage`, Amount: 1525.00},
+    {Date: `01/02/24`, Description:  `Groceries`, Amount: 108.46},
+    {Date: `01/06/24`, Description:  `Auto Loan`, Amount: 450.15},
+    {Date: `01/07/24`, Description:  `Internet`, Amount: 70.00},
+    {Date: `01/11/24`, Description:  `Trash`, Amount: 20.00},
+    {Date: `01/12/24`, Description:  `Auto Insurance`, Amount: 100.50},
+  ];
+  //User bank information for bank table
+  let bankData = [
+    {Bank: `Chase`, Description:  `Checking`, Amount: 5003.56},
+    {Bank: `Chase`, Description:  `Savings`, Amount: 2154.12},
+  ];
+  //User stock information for stock table
+  let stockData = [
+    {StockID: `KO`, Company: `Coca-Cola Co`, Amount: 25, Price: 70.44},
+    {StockID: `WMT`, Company: `Walmart Inc`, Amount: 100, Price: 81.31},
+    {StockID: `INTC`, Company: `Intel Corp`, Amount: 50, Price: 22.77},
+    {StockID: `MCD`, Company: `McDonald's Corp`, Amount: 5, Price: 316.56},
+    {StockID: `DIS`, Company: `Walt Disney Co`, Amount: 20, Price: 97.28},
+    {StockID: `AMZN`, Company: `Amazon.com Inc`, Amount: 5, Price: 188.99},
+]
+  // Command to load data when the website loads
+  window.onload = () => {
+    loadBudgetData(budgetData);
+    loadBankData(bankData);
+    loadStockData(stockData);
+  };
+  // Function to load budget data to budget table
+  function loadBudgetData(budgetData){
+    const tableBody = document.getElementById("budgetTable");
+    let dataHtml = ``;
+    
+    for(let budget of budgetData) {
+      dataHtml += `<tr><td>${budget.Date}</td><td>${budget.Description}</td><td>${budget.Amount}</td></tr>`;
+    }
+    console.log(dataHtml)
+    tableBody.innerHTML = dataHtml;
+  }
+  // Function to load bank data to bank table
+  function loadBankData(bankData) {
+    const tableBody2 = document.getElementById("bankTable");
+    let dataHtml2 = ``;
+
+    for(let bank of bankData) {
+      dataHtml2 += `<tr><td>${bank.Bank}</td><td>${bank.Description}</td><td>${bank.Amount}</td></tr>`;
+    }
+    console.log(dataHtml2)
+    tableBody2.innerHTML = dataHtml2
+  }
+  // Function to stock budget data to stock table
+  function loadStockData(stockData) {
+    const tableBody3 = document.getElementById("stockTable");
+    let dataHtml3 = ``;
+
+    for(let stock of stockData) {
+      dataHtml3 += `<tr><td>${stock.StockID}</td><td>${stock.Company}</td><td>${stock.Amount}</td><td>${stock.Price}</td></tr>`;
+    }
+    console.log(dataHtml3)
+    tableBody3.innerHTML = dataHtml3
+  }
+  </script>
+
+
+
+<footer>
+<!--Legal Notice-->
+<p>MyMoney is a registered LLC</p>
+<p>MyMoney is not responsible for market outcomes</p>
+</footer>
+
+</body>
+</html>

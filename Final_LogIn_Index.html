@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='https://fonts.googleapis.com/css?family=Rye' rel='stylesheet'>
+  <title>MyMoney</title>
+</head>
+<body>
+  
+  <style>
+
+    h1{
+      background-color: rgb(166,204,112);
+      font-family: 'Rye';
+      color: cornsilk;
+      font-size: 72px;
+      border-radius: 10px;
+      height: 100px;
+    }
+    p{
+      background-color: rgb(166,204,112);
+      color: cornsilk;
+      border-radius: 10px;
+      height: 100px;
+      font-size: 36px;
+    }
+    hr{
+      background-color: rgb(166,204,112);
+    }
+    body{ 
+      background-color: lightgoldenrodyellow;
+    }
+    input {
+      border-radius: 10px;
+      background-color: lightgray;
+    }
+    label{
+      color: cornsilk;
+      background-color: rgb(166,204,112);
+      font-size: 24px;
+      border-radius: 10px;
+    }
+    img{
+      align-content: center;
+      width: 2550px;
+      height: 800px;
+    }
+
+  </style>
+
+  <!--Main Title-->
+  <h1>MyMoney</h1>
+  <p id = "logIn">Please log into your account</p>
+  <hr>
+    
+  <!--Setup to switch to main screen-->
+    <form id="form" action="Final_Main_Index.html" method="GET">
+  
+  <!--Input for user name-->    
+    <div>
+      <label for="user name">User Name: </label>
+      <input type="text" id="userName" name="userName" Required><br><br>
+    </div>
+    
+  <!--Input for user password-->
+    <div>
+      <label>Password: </label>
+      <input type="text" id="userPassword" name="userPassword" Required><br><br>
+    </div>
+    
+  <!--submit button-->  
+    <button type="submit" style="font-size: 15px; background-color: rgb(166,204,112); color: cornsilk; border-radius: 10px;">Submit</button>
+    </form>
+
+  <!--general photo-->  
+    <img src="https://www.investopedia.com/thmb/FyhtpjCcAZXZrMyui1qsQay8HLg=/724x483/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-1309118129-3660c346493a4029ad23f315a19ae46e.jpg" alt="Budgeting">
+
+</body>
+</html>
